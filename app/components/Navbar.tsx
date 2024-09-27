@@ -56,15 +56,21 @@ export function Navbar() {
           <div className="hidden md:flex items-center space-x-7">
             {session ? (
               <>
-                <Link href="/tasks" className="text-white hover:text-gray-200">
+                <Link
+                  href="/tasks"
+                  className="text-white hover:text-gray-200 hover:underline"
+                >
                   Tasks
                 </Link>
-                <Link href="/about" className="text-white hover:text-gray-200">
+                <Link
+                  href="/about"
+                  className="text-white hover:text-gray-200 hover:underline"
+                >
                   About
                 </Link>
                 <Link
                   href="/contact"
-                  className="text-white hover:text-gray-200"
+                  className="text-white hover:text-gray-200 hover:underline"
                 >
                   Contact
                 </Link>
@@ -123,19 +129,19 @@ export function Navbar() {
               <>
                 <Link
                   href="/tasks"
-                  className="block text-white hover:text-gray-200"
+                  className="block text-white hover:text-gray-200 hover:underline"
                 >
                   Tasks
                 </Link>
                 <Link
                   href="/about"
-                  className="block text-white hover:text-gray-200"
+                  className="block text-white hover:text-gray-200 hover:underline"
                 >
                   About
                 </Link>
                 <Link
                   href="/contact"
-                  className="block text-white hover:text-gray-200"
+                  className="block text-white hover:text-gray-200 hover:underline"
                 >
                   Contact
                 </Link>

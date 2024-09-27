@@ -4,22 +4,22 @@ import Link from "next/link";
 const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-800 text-white mt-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
+          <div className="text-center md:text-left flex flex-col md:items-left">
             <h3 className="text-lg font-semibold mb-4">Task Manager</h3>
             <p className="text-sm text-gray-300">
               Streamline your productivity with our intuitive task management
               solution.
             </p>
           </div>
-          <div>
+          <div className="text-center flex flex-col items-center">
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
                 <Link
                   href="/"
-                  className="text-sm text-gray-300 hover:text-white transition duration-300"
+                  className="text-sm text-gray-300 hover:text-white hover:underline transition duration-300"
                 >
                   Home
                 </Link>
@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/tasks"
-                  className="text-sm text-gray-300 hover:text-white transition duration-300"
+                  className="text-sm text-gray-300 hover:text-white hover:underline transition duration-300"
                 >
                   Tasks
                 </Link>
@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/about"
-                  className="text-sm text-gray-300 hover:text-white transition duration-300"
+                  className="text-sm text-gray-300 hover:text-white hover:underline transition duration-300"
                 >
                   About
                 </Link>
@@ -43,16 +43,16 @@ const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/contact"
-                  className="text-sm text-gray-300 hover:text-white transition duration-300"
+                  className="text-sm text-gray-300 hover:text-white hover:underline transition duration-300"
                 >
                   Contact
                 </Link>
               </li>
             </ul>
           </div>
-          <div>
+          <div className="text-center md:text-right flex flex-col md:items-right">
             <h3 className="text-lg font-semibold mb-4">Connect With Us</h3>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 justify-center md:justify-end">
               <a
                 href="#"
                 className="text-gray-300 hover:text-white transition duration-300"

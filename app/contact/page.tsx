@@ -29,10 +29,11 @@ const ContactPage: React.FC = () => {
             Get in Touch
           </h2>
           <p className="text-white mb-4">
-            We'd love to hear from you! Whether you have a question about
+            We&apos;d love to hear from you! Whether you have a question about
             features, trials, pricing, or anything else, our team is ready to
             answer all your questions.
           </p>
+
           <div className="mb-4">
             <h3 className="text-xl font-semibold mb-2 text-white">Email</h3>
             <p className="text-white">support@taskmanager.com</p>

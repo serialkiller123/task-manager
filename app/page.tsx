@@ -37,7 +37,9 @@ export default function Home() {
           </div>
 
           <div className="bg-white bg-opacity-20 rounded-xl p-6 shadow-lg">
-            <h2 className="text-2xl font-semibold mb-4">Today's Weather</h2>
+            <h2 className="text-2xl font-semibold mb-4">
+              Today&apos;s Weather
+            </h2>
             <WeatherWidget />
           </div>
         </div>

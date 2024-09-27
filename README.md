@@ -2,7 +2,7 @@
 
 Task Manager is a full-stack web application built with Next.js, Prisma, and PostgreSQL. It allows users to efficiently manage their tasks while providing real-time weather information.
 
-![Task Manager Screenshot](https://your-screenshot-url-here.com)
+- Deployed App URL: [https://your-screenshot-url-here.com](https://your-screenshot-url-here.com)
 
 ## Features
 
@@ -34,7 +34,7 @@ Before you begin, ensure you have the following installed:
 1. Clone the repository:
 
    ```
-   git clone https://github.com/yourusername/task-manager.git
+   git clone https://github.com/serialkiller123/task-manager.git
    cd task-manager
    ```
 
@@ -78,7 +78,7 @@ Before you begin, ensure you have the following installed:
    yarn dev
    ```
 
-6. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+6. Open [http://localhost:3000] (http://localhost:3000) in your browser to see the application.
 
 ## Deployment
 
@@ -95,4 +95,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Acknowledgements
 
 - Weather data provided by [OpenWeather](https://openweathermap.org/)
-- Icons from [Heroicons](https://heroicons.com/)

@@ -44,7 +44,7 @@ export default function TasksPage() {
       const data = await res.json();
       setTasks(data);
     } catch (err) {
-      setError("An error occurred while fetching tasks");
+      setError(err as Error["message"]);
     } finally {
       setIsLoading(false);
     }
@@ -65,7 +65,7 @@ export default function TasksPage() {
       setTasks([...tasks, createdTask]);
       setNewTask({ title: "", description: "" });
     } catch (err) {
-      setError("An error occurred while creating the task");
+      setError(err as Error["message"]);
     }
   };
 
@@ -77,7 +77,7 @@ export default function TasksPage() {
       }
       setTasks(tasks.filter((task) => task.id !== id));
     } catch (err) {
-      setError("An error occurred while deleting the task");
+      setError(err as Error["message"]);
     }
   };
 
@@ -94,7 +94,7 @@ export default function TasksPage() {
       const updatedTask = await res.json();
       setTasks(tasks.map((task) => (task.id === id ? updatedTask : task)));
     } catch (err) {
-      setError("An error occurred while updating the task status");
+      setError(err as Error["message"]);
     }
   };
 
