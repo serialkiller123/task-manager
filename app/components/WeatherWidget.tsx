@@ -66,6 +66,7 @@ export function WeatherWidget() {
         return city;
       } catch (err) {
         setError("Failed to get city from coordinates");
+        console.log(err);
         setLoading(false);
         return null;
       }
@@ -86,6 +87,7 @@ export function WeatherWidget() {
           },
           (err) => {
             setError("Location access denied.");
+            console.log(err);
             setLoading(false);
           }
         );
