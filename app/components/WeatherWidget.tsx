@@ -45,7 +45,6 @@ export function WeatherWidget() {
         const data = await response.json();
         setWeather(data);
 
-        // Set background image based on weather condition
         const condition: keyof typeof weatherBackgrounds = data.weather[0].main;
         setBackgroundImage(
           weatherBackgrounds[condition] || weatherBackgrounds.Clear
