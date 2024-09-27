@@ -2,7 +2,7 @@
 
 Task Manager is a full-stack web application built with Next.js, Prisma, and PostgreSQL. It allows users to efficiently manage their tasks while providing real-time weather information.
 
-- Deployed App URL: [https://your-screenshot-url-here.com](https://your-screenshot-url-here.com)
+- Deployed App URL: [https://task-manager-three-lyart.vercel.app/](https://task-manager-three-lyart.vercel.app/)
 
 ## Features
 
