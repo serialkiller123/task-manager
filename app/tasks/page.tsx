@@ -1,5 +1,3 @@
-// app/tasks/page.tsx
-
 "use client";
 
 import { useState, useEffect } from "react";
@@ -9,6 +7,9 @@ import { Button } from "../components/Button";
 import { Input } from "../components/Input";
 import { TaskCard } from "../components/TaskCard";
 import { WeatherWidget } from "../components/WeatherWidget";
+import JokeWidget from "../components/JokeWidget";
+import RandomFactWidget from "../components/RandomFactWidget";
+import TechNewsWidget from "../components/fetchStories";
 
 interface Task {
   id: string;
@@ -115,17 +116,22 @@ export default function TasksPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div className="lg:col-span-2">
-          <h1 className="text-4xl font-bold mb-8 text-white">Task Manager</h1>
+      <h1 className="text-4xl font-bold mb-8 text-white text-center">
+        Task Manager
+      </h1>
 
-          <div className="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg shadow-lg rounded-lg p-6 mb-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Task Form and List Section */}
+        <div className="lg:col-span-2 space-y-8">
+          {/* Create New Task Form */}
+          <div className="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg shadow-lg rounded-lg p-6">
             <h2 className="text-2xl font-semibold mb-4 text-white">
               Create New Task
             </h2>
             <form onSubmit={handleCreateTask} className="space-y-4">
               <Input
                 label="Title"
+                placeholder="Enter task title"
                 value={newTask.title}
                 onChange={(e) =>
                   setNewTask({ ...newTask, title: e.target.value })
@@ -135,6 +141,7 @@ export default function TasksPage() {
               />
               <Input
                 label="Description"
+                placeholder="Enter task description"
                 value={newTask.description}
                 onChange={(e) =>
                   setNewTask({ ...newTask, description: e.target.value })
@@ -147,6 +154,7 @@ export default function TasksPage() {
             </form>
           </div>
 
+          {/* Task List */}
           <div className="space-y-4">
             {tasks.map((task) => (
               <TaskCard
@@ -159,9 +167,13 @@ export default function TasksPage() {
           </div>
         </div>
 
+        {/* Weather Widget Section */}
         <div className="lg:col-span-1">
           <div className="sticky top-8">
             <WeatherWidget />
+            <TechNewsWidget />
+            <JokeWidget />
+            <RandomFactWidget />
           </div>
         </div>
       </div>

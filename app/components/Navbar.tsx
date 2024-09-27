@@ -53,11 +53,20 @@ export function Navbar() {
           </button>
 
           {/* Desktop menu */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-7">
             {session ? (
               <>
                 <Link href="/tasks" className="text-white hover:text-gray-200">
                   Tasks
+                </Link>
+                <Link href="/about" className="text-white hover:text-gray-200">
+                  About
+                </Link>
+                <Link
+                  href="/contact"
+                  className="text-white hover:text-gray-200"
+                >
+                  Contact
                 </Link>
                 <div className="flex items-center space-x-2">
                   {session.user?.image ? (
@@ -117,6 +126,18 @@ export function Navbar() {
                   className="block text-white hover:text-gray-200"
                 >
                   Tasks
+                </Link>
+                <Link
+                  href="/about"
+                  className="block text-white hover:text-gray-200"
+                >
+                  About
+                </Link>
+                <Link
+                  href="/contact"
+                  className="block text-white hover:text-gray-200"
+                >
+                  Contact
                 </Link>
                 <div className="flex items-center space-x-2">
                   {session.user?.image ? (
