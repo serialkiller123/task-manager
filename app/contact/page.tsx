@@ -75,7 +75,7 @@ const ContactPage: React.FC = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full px-3 py-2 bg-white bg-opacity-20 border-0 rounded-md text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 bg-white bg-opacity-20 border-0 rounded-md text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-500"
                 placeholder="your@email.com"
               />
             </div>
@@ -88,7 +88,7 @@ const ContactPage: React.FC = () => {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 required
-                className="w-full px-3 py-2 bg-white bg-opacity-20 border-0 rounded-md text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 bg-white bg-opacity-20 border-0 rounded-md text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-500"
                 rows={4}
                 placeholder="Your message here..."
               ></textarea>
