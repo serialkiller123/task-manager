@@ -51,7 +51,7 @@ export function WeatherWidget() {
           weatherBackgrounds[condition] || weatherBackgrounds.Clear
         );
       } catch (err) {
-        setError("Failed to load weather data");
+        setError((err as Error).message);
       } finally {
         setLoading(false);
       }
