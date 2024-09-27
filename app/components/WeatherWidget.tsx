@@ -35,9 +35,8 @@ export function WeatherWidget() {
   const [backgroundImage, setBackgroundImage] = useState("");
 
   useEffect(() => {
-    const fetchWeather = async () => {
+    const fetchWeather = async (city: string) => {
       try {
-        const city = "Male";
         const response = await fetch(`/api/weather?city=${city}`);
         if (!response.ok) {
           throw new Error("Failed to fetch weather data");
@@ -56,7 +55,47 @@ export function WeatherWidget() {
       }
     };
 
-    fetchWeather();
+    const reverseGeocode = async (latitude: number, longitude: number) => {
+      try {
+        const response = await fetch(
+          `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
+        );
+        const data = await response.json();
+        const city =
+          data.address.city || data.address.town || data.address.village;
+        return city;
+      } catch (err) {
+        setError("Failed to get city from coordinates");
+        setLoading(false);
+        return null;
+      }
+    };
+
+    const getLocation = () => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          async (position) => {
+            const { latitude, longitude } = position.coords;
+            const city = await reverseGeocode(latitude, longitude);
+            if (city) {
+              fetchWeather(city);
+            } else {
+              setError("Unable to determine city from coordinates");
+              setLoading(false);
+            }
+          },
+          (err) => {
+            setError("Location access denied.");
+            setLoading(false);
+          }
+        );
+      } else {
+        setError("Geolocation is not supported by this browser.");
+        setLoading(false);
+      }
+    };
+
+    getLocation();
   }, []);
 
   if (loading) return <div>Loading weather...</div>;
